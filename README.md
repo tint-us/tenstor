@@ -35,7 +35,7 @@ File PDF yang diterima akan:
 
 ### 2) Clone & Konfigurasi
 ```bash
-git clone https://github.com/YOUR_USER/tenstor.git
+git clone https://github.com/tint-us/tenstor.git
 cd tenstor
 cp .env.example .env
 # Edit .env → TENSTOR_USER / TENSTOR_PASSWORD
@@ -48,7 +48,7 @@ docker compose up -d --build
 
 ### 4) Tes Manual
 ```bash
-curl -u "$TENSTOR_USER:$TENSTOR_PASSWORD"       -F "reportContent=@/path/to/report.pdf"       http://YOUR_HOST:8085/
+curl -u "$TENSTOR_USER:$TENSTOR_PASSWORD" -F "reportContent=@/path/to/report.pdf" http://YOUR_HOST:8085/
 ```
 
 ### 5) Konfigurasi di Tenable.sc
