@@ -18,9 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # php.ini tweaks
 COPY docker/php.ini /usr/local/etc/php/conf.d/uploads.ini
 
-# App dirs
-RUN mkdir -p /tenable/hasil /var/log \
-    && chown -R www-data:www-data /tenable/hasil /var/log
+# App dirs: buat hanya folder milik app, bukan seluruh /var/log
+RUN mkdir -p /tenable/hasil /var/log/tenstor \
+    && chown -R www-data:www-data /tenable/hasil /var/log/tenstor
 
 # Copy app
 WORKDIR /var/www/html
@@ -30,9 +30,9 @@ COPY src/index.php ./index.php
 # Env defaults
 ENV PHP_TZ=Asia/Jakarta \
     TENSTOR_UPLOAD_DIR=/tenable/hasil \
-    TENSTOR_LOG_FILE=/var/log/report-tenable.log
+    TENSTOR_LOG_FILE=/var/log/tenstor/report-tenable.log
 
-# Drop privileges
-USER www-data
+# Penting: JANGAN set USER www-data di sini. Biarkan default (root)
+# agar apache entrypoint bisa bikin /var/log/apache2 dsb dengan benar.
 
 EXPOSE 80
