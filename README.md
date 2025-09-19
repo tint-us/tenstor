@@ -31,7 +31,7 @@ File PDF yang diterima akan:
 
 ### 1) Prasyarat
 - Docker + Docker Compose
-- Port 8085 terbuka dari IP Tenable.sc
+- Port 8085 terbuka dan belum terpakai di IP Address server yang akan digunakan
 
 ### 2) Clone & Konfigurasi
 ```bash
