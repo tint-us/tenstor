@@ -31,11 +31,11 @@ The incoming PDF will be:
 
 ### 1) Prerequisites
 - Docker + Docker Compose
-- Port 8085 open from Tenable.sc
+- Port 8085 open and available from server that will be used
 
 ### 2) Clone & Configure
 ```bash
-git clone https://github.com/YOUR_USER/tenstor.git
+git clone https://github.com/tint-us/tenstor.git
 cd tenstor
 cp .env.example .env
 # edit .env → TENSTOR_USER / TENSTOR_PASSWORD
