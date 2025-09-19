@@ -128,6 +128,6 @@ DEFINISI
 - “Menjual”/“Penjualan” berarti menyediakan salinan Perangkat Lunak atau Turunannya, atau akses ke salinan tersebut, dengan imbalan biaya atau kompensasi. PENJELASAN: Penyediaan Hosting/SaaS DIPERBOLEHKAN dan tidak dianggap sebagai “Penjualan” selama Anda tidak menjual salinan Perangkat Lunak atau Turunannya.
 - “Lisensi Komersial” berarti perjanjian terpisah dari Pemberi Lisensi yang mengizinkan Penjualan.
 
-KETERSEDIAAN LISENSI KOMERSIAL
-Lisensi Komersial tersedia dari Pemberi Lisensi. Hubungi: tintus.ardi@gmail.com.
+Untuk kebutuhan komersial, yuk kita ngobrol via: tintus.ardi@gmail.com.
+
 ---
