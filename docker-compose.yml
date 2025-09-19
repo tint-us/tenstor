@@ -1,0 +1,14 @@
+services:
+  tenstor:
+    container_name: tenstor
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8085:80"
+    env_file:
+      - .env
+    volumes:
+      - ./data/hasil:/tenable/hasil
+      - ./data/log:/var/log
+    restart: unless-stopped

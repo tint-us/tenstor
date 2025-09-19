@@ -1,0 +1,10 @@
+{
+  "name": "masseee/tenstor",
+  "description": "Tenable.sc Publishing Site receiver",
+  "type": "project",
+  "require": {
+    "smalot/pdfparser": "^2.10"
+  },
+  "minimum-stability": "stable",
+  "license": "UNLICENSED"
+}
