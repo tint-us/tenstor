@@ -10,5 +10,5 @@ services:
       - .env
     volumes:
       - ./data/hasil:/tenable/hasil
-      - ./data/log:/var/log
+      - ./data/log:/var/log/tenstor
     restart: unless-stopped
