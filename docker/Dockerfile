@@ -7,16 +7,20 @@ RUN composer install --no-dev --prefer-dist --no-interaction --no-progress
 # Stage 2: runtime
 FROM php:8.3-apache
 
-# Extensions & tools
-RUN docker-php-ext-install -j$(nproc) mbstring \
-&& a2enmod rewrite
+# Install build deps for mbstring (needs oniguruma), enable Apache rewrite
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        libonig-dev \
+        pkg-config \
+    && docker-php-ext-install -j$(nproc) mbstring \
+    && a2enmod rewrite \
+    && rm -rf /var/lib/apt/lists/*
 
 # php.ini tweaks
 COPY docker/php.ini /usr/local/etc/php/conf.d/uploads.ini
 
 # App dirs
 RUN mkdir -p /tenable/hasil /var/log \
-&& chown -R www-data:www-data /tenable/hasil /var/log
+    && chown -R www-data:www-data /tenable/hasil /var/log
 
 # Copy app
 WORKDIR /var/www/html
@@ -25,10 +29,10 @@ COPY src/index.php ./index.php
 
 # Env defaults
 ENV PHP_TZ=Asia/Jakarta \
-TENSTOR_UPLOAD_DIR=/tenable/hasil \
-TENSTOR_LOG_FILE=/var/log/report-tenable.log
+    TENSTOR_UPLOAD_DIR=/tenable/hasil \
+    TENSTOR_LOG_FILE=/var/log/report-tenable.log
 
-# Run as non-root
+# Drop privileges
 USER www-data
 
 EXPOSE 80
